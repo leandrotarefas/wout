@@ -14,8 +14,8 @@ import lombok.experimental.SuperBuilder;
 @EqualsAndHashCode(callSuper = false)
 @SuperBuilder
 @Entity
-public class GrupoMuscular extends Parte implements Serializable {	
-
+public class GrupoMuscular extends Parte implements Serializable {
+	
 	/**
 	 * 
 	 */

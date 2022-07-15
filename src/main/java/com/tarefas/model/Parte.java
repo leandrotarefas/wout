@@ -1,5 +1,7 @@
 package com.tarefas.model;
 
+import java.io.Serializable;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,7 +19,12 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @MappedSuperclass
-public abstract class Parte {	
+public abstract class Parte implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;	
 	@EqualsAndHashCode.Exclude
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

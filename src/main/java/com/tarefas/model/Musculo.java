@@ -1,9 +1,8 @@
 package com.tarefas.model;
 
-import java.util.Set;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
@@ -20,8 +19,13 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @Entity
-public class Musculo extends Parte {
+public class Musculo extends Parte implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@NonNull
 	private Integer min, mid, max; 
 	
@@ -29,10 +33,4 @@ public class Musculo extends Parte {
 	@ManyToOne
 	private GrupoMuscular grupo;
 
-	//quem é o dono do relacionamento
-	@ManyToMany(mappedBy = "musculos")
-	private Set<Exercicio> exercicios;
-	
-	
-	
 }
